@@ -134,7 +134,7 @@ Choose a license (MIT recommended) or add your preferred license.
 
 ## Contact
 
-Your Name — [your.email@example.com](mailto:your.email@example.com)
+Your Name — [your.email@example.com](mailto:alberionebritto@gmail.com)
 
 Portfolio: [https://personal-portfolio-11-tawny.vercel.app/](https://personal-portfolio-11-tawny.vercel.app/)
 
