@@ -370,6 +370,27 @@
             color: var(--gray);
         }
 
+        /* Profile Picture Styles */
+        .profile-container {
+            width: 100%;
+            max-width: 350px;
+            margin: 0 auto;
+        }
+
+        .profile-picture {
+            width: 100%;
+            height: auto;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            border: 5px solid white;
+            transition: var(--transition);
+        }
+
+        .profile-picture:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
         /* Skills Section */
         .skills {
             background-color: #f8fafc;
@@ -508,6 +529,63 @@
             font-size: 0.85rem;
         }
 
+        /* Certifications Section */
+        .certifications {
+            background-color: #f0f9ff;
+        }
+
+        .certifications-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .cert-card {
+            background-color: white;
+            border-radius: var(--radius);
+            padding: 2rem;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border-top: 4px solid var(--primary);
+        }
+
+        .cert-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(37, 99, 235, 0.15);
+        }
+
+        .cert-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .cert-org {
+            color: var(--gray);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .cert-date {
+            color: var(--accent);
+            font-size: 0.85rem;
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+
+        .cert-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #10b981, #06b6d4);
+            color: white;
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-top: 0.5rem;
+        }
+
         /* Contact */
         .contact {
             background-color: var(--dark);
@@ -584,6 +662,102 @@
             resize: vertical;
         }
 
+        /* Photos Section */
+        .photos {
+            background-color: white;
+            padding: 100px 0;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--gray);
+            font-size: 1.1rem;
+            margin-bottom: 3rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .collage-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .collage-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(2, 250px);
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .collage-item {
+            position: relative;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .collage-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .collage-item.large {
+            grid-column: span 2;
+            grid-row: span 2;
+        }
+
+        .collage-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .collage-item:hover .collage-img {
+            transform: scale(1.05);
+        }
+
+        .collage-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+            padding: 1.5rem;
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .collage-item:hover .collage-overlay {
+            opacity: 1;
+        }
+
+        .collage-text h3 {
+            color: white;
+            font-size: 1.2rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .collage-text p {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.9rem;
+            margin-bottom: 0;
+        }
+
+        .photos-description {
+            text-align: center;
+            max-width: 800px;
+            margin: 3rem auto 0;
+            padding: 2rem;
+            background-color: #f8fafc;
+            border-radius: var(--radius);
+            border-left: 4px solid var(--primary);
+        }
+
         /* Footer */
         footer {
             background-color: #0f172a;
@@ -641,6 +815,24 @@
             .hero {
                 padding-top: 150px;
             }
+            
+            .profile-container {
+                max-width: 300px;
+            }
+            
+            .certifications-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+            
+            .collage-grid {
+                grid-template-columns: repeat(3, 1fr);
+                grid-template-rows: repeat(3, 200px);
+            }
+            
+            .collage-item.large {
+                grid-column: span 2;
+                grid-row: span 1;
+            }
         }
 
         @media (max-width: 768px) {
@@ -680,6 +872,24 @@
             .about-stats {
                 grid-template-columns: 1fr;
             }
+            
+            .certifications-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .collage-grid {
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: repeat(4, 180px);
+            }
+            
+            .collage-item.large {
+                grid-column: span 2;
+                grid-row: span 1;
+            }
+            
+            .photos {
+                padding: 70px 0;
+            }
         }
 
         @media (max-width: 576px) {
@@ -702,6 +912,43 @@
             .projects-grid {
                 grid-template-columns: 1fr;
             }
+            
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .profile-container {
+                max-width: 250px;
+            }
+            
+            .collage-grid {
+                grid-template-columns: 1fr;
+                grid-template-rows: repeat(5, 200px);
+                gap: 0.8rem;
+            }
+            
+            .collage-item.large {
+                grid-column: span 1;
+                grid-row: span 1;
+            }
+            
+            .collage-overlay {
+                opacity: 1;
+                padding: 1rem;
+            }
+            
+            .collage-text h3 {
+                font-size: 1rem;
+            }
+            
+            .collage-text p {
+                font-size: 0.8rem;
+            }
+            
+            .photos-description {
+                padding: 1.5rem;
+                margin-top: 2rem;
+            }
         }
     </style>
 </head>
@@ -718,7 +965,9 @@
                     <li><a href="#skills">Skills</a></li>
                     <li><a href="#experience">Experience</a></li>
                     <li><a href="#projects">Projects</a></li>
+                    <li><a href="#certifications">Certifications</a></li>
                     <li><a href="#contact">Contact</a></li>
+                    <li><a href="#photos">Photos</a></li>
                 </ul>
                 
                 <button class="mobile-menu-btn" id="mobileMenuBtn">
@@ -732,7 +981,9 @@
                 <a href="#skills">Skills</a>
                 <a href="#experience">Experience</a>
                 <a href="#projects">Projects</a>
+                <a href="#certifications">Certifications</a>
                 <a href="#contact">Contact</a>
+                <a href="#photos">Photos</a>
             </div>
         </div>
     </header>
@@ -765,9 +1016,9 @@
                             <div class="code-line">&nbsp;&nbsp;role: <span class="code-string">"Computer Engineer"</span>,</div>
                             <div class="code-line">&nbsp;&nbsp;skills: [<span class="code-string">"C++"</span>, <span class="code-string">"Java"</span>, <span class="code-string">"MATLAB"</span>],</div>
                             <div class="code-line">&nbsp;&nbsp;education: <span class="code-string">"Fr. Conceicao Rodrigues College"</span>,</div>
-                            <div class="code-line">&nbsp;&nbsp;graduation: <span class="code-string">"2029"</span></div>
+                            <div class="code-line">&nbsp;&nbsp;certifications: [<span class="code-string">"MATLAB"</span>, <span class="code-string">"ML"</span>, <span class="code-string">"DL"</span>, <span class="code-string">"Signal Processing"</span>]</div>
                             <div class="code-line">};</div>
-                            <div class="code-line"><span class="code-comment">// Passionate about building innovative solutions</span></div>
+                            <div class="code-line"><span class="code-comment">// MathWorks Certified Specialist with 100% completion</span></div>
                         </div>
                     </div>
                 </div>
@@ -791,7 +1042,7 @@
                         </div>
                         <div class="stat-item">
                             <div class="stat-number" id="certificateCount">0</div>
-                            <div class="stat-label">Certifications</div>
+                            <div class="stat-label">Certifications (All 100% Score)</div>
                         </div>
                         <div class="stat-item">
                             <div class="stat-number">3+</div>
@@ -805,23 +1056,8 @@
                 </div>
                 
                 <div class="about-image">
-                    <div class="code-window">
-                        <div class="window-header">
-                            <div class="window-dot dot-red"></div>
-                            <div class="window-dot dot-yellow"></div>
-                            <div class="window-dot dot-green"></div>
-                        </div>
-                        <div class="window-content">
-                            <div class="code-line"><span class="code-comment">// My Development Philosophy</span></div>
-                            <div class="code-line"><span class="code-keyword">function</span> <span class="code-string">buildProject</span>(idea) {</div>
-                            <div class="code-line">&nbsp;&nbsp;<span class="code-keyword">const</span> plan = research(idea);</div>
-                            <div class="code-line">&nbsp;&nbsp;<span class="code-keyword">const</span> code = implement(plan);</div>
-                            <div class="code-line">&nbsp;&nbsp;<span class="code-keyword">const</span> result = test(code);</div>
-                            <div class="code-line">&nbsp;&nbsp;<span class="code-keyword">return</span> optimize(result);</div>
-                            <div class="code-line">}</div>
-                            <div class="code-line"></div>
-                            <div class="code-line"><span class="code-comment">// Always learning, always improving</span></div>
-                        </div>
+                    <div class="profile-container">
+                        <img src="IMG20251115170321-min.jpg" alt="Alberione Britto" class="profile-picture">
                     </div>
                 </div>
             </div>
@@ -844,6 +1080,21 @@
                         <span class="skill-tag">C++</span>
                         <span class="skill-tag">Java</span>
                         <span class="skill-tag">MATLAB</span>
+                    </div>
+                </div>
+                
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>Data Science & AI</h3>
+                    <p>Certified in MATLAB, Machine Learning, Deep Learning, and Signal Processing with 100% completion.</p>
+                    <div class="skill-tags">
+                        <span class="skill-tag">MATLAB</span>
+                        <span class="skill-tag">Machine Learning</span>
+                        <span class="skill-tag">Deep Learning</span>
+                        <span class="skill-tag">Signal Processing</span>
+                        <span class="skill-tag">Data Analysis</span>
                     </div>
                 </div>
                 
@@ -893,11 +1144,18 @@
                 </div>
                 
                 <div class="timeline-item">
-                    <div class="timeline-date">2025</div>
+                    <div class="timeline-date">Nov 2025</div>
                     <div class="timeline-content">
-                        <h3>MATLAB Certification</h3>
-                        <p class="company">MathWorks</p>
-                        <p>Completed 4 specialized MATLAB courses covering programming, data analysis, and computational mathematics. Developed practical skills in technical computing.</p>
+                        <h3>MathWorks Certified Specialist</h3>
+                        <p class="company">MathWorks Training Services</p>
+                        <p>Successfully completed 4 specialized MATLAB courses with 100% completion rate:</p>
+                        <ul style="margin-top: 0.5rem; padding-left: 1.5rem; color: var(--gray);">
+                            <li>MATLAB Onramp (Nov 22, 2025)</li>
+                            <li>Machine Learning Onramp (Nov 23, 2025)</li>
+                            <li>Deep Learning Onramp (Nov 24, 2025)</li>
+                            <li>Signal Processing Onramp (Nov 24, 2025)</li>
+                        </ul>
+                        <p style="margin-top: 0.5rem;">Developed practical skills in technical computing, data analysis, and AI applications.</p>
                     </div>
                 </div>
                 
@@ -961,6 +1219,58 @@
                             <span>JavaScript</span>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section class="certifications" id="certifications">
+        <div class="container">
+            <h2>Certifications</h2>
+            <div class="certifications-grid">
+                <div class="cert-card">
+                    <div class="cert-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <h3>MATLAB Onramp</h3>
+                    <p class="cert-org">MathWorks Training Services</p>
+                    <p class="cert-date">Completed: November 22, 2025</p>
+                    <p>Mastered MATLAB fundamentals including variables, arrays, data analysis, and visualization techniques.</p>
+                    <div class="cert-badge">100% Score</div>
+                </div>
+                
+                <div class="cert-card">
+                    <div class="cert-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>Machine Learning Onramp</h3>
+                    <p class="cert-org">MathWorks Training Services</p>
+                    <p class="cert-date">Completed: November 23, 2025</p>
+                    <p>Gained expertise in machine learning concepts, model training, evaluation, and deployment using MATLAB.</p>
+                    <div class="cert-badge">100% Score</div>
+                </div>
+                
+                <div class="cert-card">
+                    <div class="cert-icon">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                    <h3>Deep Learning Onramp</h3>
+                    <p class="cert-org">MathWorks Training Services</p>
+                    <p class="cert-date">Completed: November 24, 2025</p>
+                    <p>Learned neural network architecture, training deep learning models, and applying transfer learning.</p>
+                    <div class="cert-badge">100% Score</div>
+                </div>
+                
+                <div class="cert-card">
+                    <div class="cert-icon">
+                        <i class="fas fa-wave-square"></i>
+                    </div>
+                    <h3>Signal Processing Onramp</h3>
+                    <p class="cert-org">MathWorks Training Services</p>
+                    <p class="cert-date">Completed: November 24, 2025</p>
+                    <p>Acquired skills in signal analysis, filtering, spectral analysis, and signal processing applications.</p>
+                    <div class="cert-badge">100% Score</div>
                 </div>
             </div>
         </div>
@@ -1038,11 +1348,77 @@
         </div>
     </section>
 
+    <!-- Photos Section -->
+    <section class="photos" id="photos">
+        <div class="container">
+            <h2>Photos & Memories</h2>
+            <p class="section-subtitle">A glimpse into my journey and experiences</p>
+            
+            <div class="collage-container">
+                <div class="collage-grid">
+                    <div class="collage-item large">
+                        <img src="IMG20251115192613.jpg" alt="Memory 1" class="collage-img">
+                        <div class="collage-overlay">
+                            <div class="collage-text">
+                                <h3>Academic Journey</h3>
+                                <p>Moments from college life</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="collage-item">
+                        <img src="IMG20251115165708.jpg" alt="Memory 2" class="collage-img">
+                        <div class="collage-overlay">
+                            <div class="collage-text">
+                                <h3>Campus Life</h3>
+                                <p>Engineering campus moments</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="collage-item">
+                        <img src="IMG20250918143012.jpg" alt="Memory 3" class="collage-img">
+                        <div class="collage-overlay">
+                            <div class="collage-text">
+                                <h3>Learning Moments</h3>
+                                <p>Study and project work</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="collage-item">
+                        <img src="IMG_20251023_235803.jpg" alt="Technical Work" class="collage-img">
+                        <div class="collage-overlay">
+                            <div class="collage-text">
+                                <h3>Technical Projects</h3>
+                                <p>Diagrams and technical work</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="collage-item">
+                        <img src="IMG_20251001_182123.jpg" alt="Creative Work" class="collage-img">
+                        <div class="collage-overlay">
+                            <div class="collage-text">
+                                <h3>Creative Side</h3>
+                                <p>Design and creative projects</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="photos-description">
+                <p>These photos capture moments from my academic journey, project work, and personal experiences as a Computer Engineering student. Each image tells a story of growth, learning, and the pursuit of knowledge.</p>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer>
         <div class="container">
             <a href="#" class="logo" style="color: white; margin-bottom: 1rem;">Alberione<span style="color: var(--accent);">Britto</span></a>
-            <p>Computer Engineer & Developer</p>
+            <p>Computer Engineer & Developer | MathWorks Certified Specialist</p>
             
             <div class="footer-social">
                 <a href="https://github.com/alberionebritto-dev" target="_blank"><i class="fab fa-github"></i></a>
